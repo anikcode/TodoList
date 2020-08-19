@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TodoList App</title>
+	<!-- bootstrap cdn -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
+</head>
+
+    <body>
+        <!--navbar-->
+        <nav class="navbar navbar-dark bg-dark" style="background-color:#e3f2fd;">
+            <a class="navbar-brand" href="#">
+                <i class="fa fa-check-circle"></i>
+                TodoList
+            </a>
+        </nav>
+        <div class="container">
+            <row>
+                <h1 class="text-center">Enter Todo Item</h1>
+                <form class="col-6 mx-auto" action="/newtodo" method="POST">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="item" placeholder="Enter todo item" value="this is new todo list item"><span> <button type="submit" class="btn btn-primary">Submit</button></span>
+                    </div>
+                </form>
+            </row>
+            <div class="row">
+                <ul class="col-6 mx-auto">
+                    <% for(var i=0;i<todoList.length;i++){ %>
+                       <li><%= todoList[i].name %></li> 
+                    <%}%> 
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
